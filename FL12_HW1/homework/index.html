@@ -12,37 +12,33 @@
     <div id="main">
       <div id="container">
         <div id="content" role="main">
-          <!-- TODO: Content goes here -->
           
-          <header>
-            <a href="https://www.epam.com/"><img src="logo.png" alt="EPAM"></a>
+          <header id="home">
+            <img src="logo.png" alt="EPAM">
 
             <h1>HTML Elements</h1>
 
             <hr>
             <nav>
-              <a href="#"><b>Home</b></a>
-              <a href="#"><b>Headings</b></a>
-              <a href="#"><b>Text formats</b></a>
-              <a href="#"><b>Types of lists</b></a>
-              <a href="#"><b>Table</b></a>
-              <a href="#"><b>Blockquotes</b></a>
-              <a href="#"><b>Registration</b></a>
+              <a href="#home"><b>Home</b></a>
+              <a href="#headings"><b>Headings</b></a>
+              <a href="#textFormats"><b>Text formats</b></a>
+              <a href="#lists"><b>Types of lists</b></a>
+              <a href="#table"><b>Table</b></a>
+              <a href="#blockquotes"><b>Blockquotes</b></a>
+              <a href="#form"><b>Registration</b></a>
             </nav>
             <hr>
           </header>
 
           <p>Lorem ipsum dolor sit amet,
-            <a href="#">test link</a>
-            adipiscing elit.
+            <a href="#">test link</a> adipiscing elit.
             Nullam dignissim convallis est. Quisque aliquam.
-            <em>This is emphasized</em>.
-            Donec faucibus. Nunc iaculis suscipit dui. 4
-            <sup>4</sup> = 256.
-            Water is H<sub>3</sub>PO<sub>4</sub>.
+            <em>This is emphasized</em>. Donec faucibus. Nunc iaculis suscipit dui. 
+            4<sup>4</sup> = 256.
+            Phosphoric acid is H<sub>3</sub>PO<sub>4</sub>.
             Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl.
-            <cite>Time Magazine</cite>
-            (That’s a citation).
+            <cite>Time Magazine</cite> (That’s a citation).
             <u>Underline.</u>
             Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.
             <strong>I am strong.</strong></p>
@@ -56,14 +52,14 @@
             is a dynamically typed language.
             auris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus. Praesent mattis, massa quis luctus fermentum. To copy a file type
             <kbd>COPY</kbd>
-            <i>filename</i>.
+            <var>filename</var>.
             <del>The meeting began at 7pm</del>
             <ins>Let’s make that 6.</ins>
             This <s>text</s> has been struck.</p>
 
           <hr>
 
-          <section>
+          <section id="headings">
             <p>h1 defines the most important heading. h6 defines the least important heading. Font-size for h1 is the same as font-size for h2, because we have to use only one h1 on the page, and it is commonly used inside header</p>
 
             <h2>Heading 2</h2>
@@ -75,8 +71,9 @@
 
           <hr>
 
-          <section>
+          <section id="textFormats">
             <h2>Text formats</h2>
+            
             <section>
               <h3>Article</h3>
               <article>               
@@ -87,63 +84,71 @@
 
             <section>
               <h3>Preformatted Text</h3>
-              <pre>Text in a <b>pre</b> element
+              <pre>
+
+Text in a <b>pre</b> element
 is displayed in a fixed-width
 font, and it preserves
 both      <b>spaces</b> and
-<b>line breaks</b></pre>
+<b>line breaks</b>
+              </pre>
             </section>
 
             <section>
               <h3>This is code</h3>
-              <pre><code>.flex {
+              <pre>
+
+<code>.flex {
   display: flex;
   justify-content: justify;
   aliign-items: center;
-}</code></pre>
+}</code>
+              </pre>
             </section>
           </section>
 
-          <section>
-            <h2>Unordered Wish List</h2>
-            <ul>
-              <li>Iphone 11 pro max</li>
-              <li>Books:
-                <ul>
-                  <li>Clean code principles javascript</li>
-                  <li>You don't know JS</li>
-                  <li>Angular Pro</li>
-                </ul>
-              </li>
-              <li>Headphones</li>
-            </ul>
-          </section>
+          <div id="lists">
+            <section>
+              <h2>Unordered Wish List</h2>
+              <ul>
+                <li>Iphone 11 pro max</li>
+                <li>Books:
+                  <ul>
+                    <li>Clean code principles javascript</li>
+                    <li>You don't know JS</li>
+                    <li>Angular Pro</li>
+                  </ul>
+                </li>
+                <li>Headphones</li>
+              </ul>
+            </section>
 
-          <section>
-            <h2>Ordered Task List</h2>
-            <ol>
-              <li>Pay the bills</li>
-              <li>Refuel the car</li>
-              <li>Finish homework
-                <ol>
-                  <li>Create HTML page according to the requirements</li>
-                  <li>Upload to the GitHub repository</li>
-                </ol>
-              </li>
-              <li>Enjoy your day</li>
-            </ol>
-          </section>
-          
-          <section>
-            <h3>Definition List</h3>
-            <dl>
-              <dt>HTML</dt>
-                <dd>HTML is the standard markup language to create Web pages.</dd>
-              <dt>CSS</dt>
-                <dd>CSS describes how HTML elements are to be displayed.</dd>
-              <dt>JavaScript</dt>
-                <dd>JavaScript is a scripting languages, primarily used on the Web.</dd>
-            </dl>
+            <section>
+              <h2>Ordered Task List</h2>
+              <ol>
+                <li>Pay the bills</li>
+                <li>Refuel the car</li>
+                <li>Finish homework
+                  <ol>
+                    <li>Create HTML page according to the requirements</li>
+                    <li>Upload to the GitHub repository</li>
+                  </ol>
+                </li>
+                <li>Enjoy your day</li>
+              </ol>
+            </section>
+            
+            <section>
+              <h3>Definition List</h3>
+              <dl>
+                <dt>HTML</dt>
+                  <dd>HTML is the standard markup language to create Web pages.</dd>
+                <dt>CSS</dt>
+                  <dd>CSS describes how HTML elements are to be displayed.</dd>
+                <dt>JavaScript</dt>
+                  <dd>JavaScript is a scripting languages, primarily used on the Web.</dd>
+              </dl>
+            </section>
 
             <label for="learn">Select for learning</label>
             <select name="learn" id="learn">
@@ -151,12 +156,13 @@ both      <b>spaces</b> and
               <option value="html">HTML</option>
               <option value="css">CSS</option>
             </select>
-          </section>
+            
+          </div>
 
           <hr>
           <hr>
 
-          <section>
+          <section id="table">
             <h2>Table</h2>
 
             <table>
@@ -192,20 +198,23 @@ both      <b>spaces</b> and
             </table>
           </section>
 
-          <section>
+          <section id="blockquotes">
             <h2>Blockquotes</h2>
 
             <p>Let’s keep it simple. Italics are good to help set it off from the body text. Be sure to style the citation.</p>
 
-            <blockquote>
+            <blockquote cite="https://www.goodreads.com/author/quotes/45372.Robert_C_Martin">
               "So if you want to go fast, if you want to get done quickly, if you want your code to be easy to write, make it easy to read."
-              <p><a href="#">Robert C. Martin (Uncle Bob)</a></p>
+              <p><a href="https://www.goodreads.com/author/quotes/45372.Robert_C_Martin">Robert C. Martin (Uncle Bob)</a></p>
             </blockquote>
+
+
+ 
           </section>
 
           <hr>
           
-          <form action="#" method="post">
+          <form action="#" method="post" id="form">
             <fieldset>
               <label for="userName">Username:</label>
               <input type="text" name="username" id="userName">
