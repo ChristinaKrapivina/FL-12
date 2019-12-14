@@ -1,5 +1,5 @@
+$color-text-white: #fff;
 $color-text-main: #2c2f3b;
-$color-text-white: #FFF;
 
 $color-bg: $color-text-white;
 
@@ -13,8 +13,10 @@ $header-bg: url("../img/m-h-day.jpg");
 
 $card-color-bg: #21232e;
 $card-color-head: $color-text-white;
-$card-color-text: #AFB3C0;
+$card-color-text: #afb3c0;
 
 $banner-bg: linear-gradient(to right, $color-button, #325fca);
+$banner-color-text: $card-color-text;
 
 $footer-color-bg: $card-color-bg;
+$footer-color-text: $card-color-text;

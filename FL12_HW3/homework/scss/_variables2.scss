@@ -1,4 +1,4 @@
-$color-text-white: #FFF;
+$color-text-white: #fff;
 $color-text-main: $color-text-white;
 
 $color-bg: #21232e;
@@ -13,8 +13,10 @@ $header-bg: url("../img/m-h-night.jpg");
 
 $card-color-bg: #3b3e50;
 $card-color-head: $color-text-white;
-$card-color-text: #AFB3C0;
+$card-color-text: #afb3c0;
 
 $banner-bg: linear-gradient(to right, $color-button, #8f2d52);
+$banner-color-text: $card-color-text;
 
 $footer-color-bg: $card-color-bg;
+$footer-color-text: $card-color-text;
