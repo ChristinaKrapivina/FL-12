@@ -1,6 +1,6 @@
-let a = Number(prompt('Please enter value \'a\' for quadratic equation:'));
-let b = Number(prompt('Please enter value \'b\' for quadratic equation:'));
-let c = Number(prompt('Please enter value \'c\' for quadratic equation:'));
+let a = parseFloat(prompt('Please enter value \'a\' for quadratic equation:'));
+let b = parseFloat(prompt('Please enter value \'b\' for quadratic equation:'));
+let c = parseFloat(prompt('Please enter value \'c\' for quadratic equation:'));
 
 if (isNaN(a) || a === 0 || isNaN(b) || isNaN(c)) {
     console.log('Invalid input data'); 
@@ -21,4 +21,3 @@ if (isNaN(a) || a === 0 || isNaN(b) || isNaN(c)) {
         console.log('x1 = ' + x1 + ' and x2 = ' + x2 + '.'); 
     } 
 }
-
