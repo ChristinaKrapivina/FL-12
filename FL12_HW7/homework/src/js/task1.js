@@ -52,7 +52,9 @@ if(credentials[userEmail]) {
             } else {
                 userNewPassConfirm = prompt('Please enter your *new* password again:', '');
     
-                if (userNewPassConfirm !== userNewPass) {
+                if(userNewPassConfirm === null || userNewPassConfirm.match(emptyRegExp)) {
+                    alert('Canceled');
+                } else if(userNewPassConfirm !== userNewPass) {
                     alert('You wrote the wrong password.');
                 } else {
                     alert('You have successfully changed your password.');
