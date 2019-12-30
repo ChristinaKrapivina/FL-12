@@ -1,48 +1,62 @@
-let wannaPlay;
+const zero = 0;
+const one = 1;
+const two = 2;
+const three = 3;
+const four = 4;
+const nine = 9;
+const hundred = 100;
+
+let playGame;
 let userGuess;
-let number;
-let prize;
+let randomNumber;
 
-wannaPlay = confirm('Do you want to play a game?');
+let currentPrize = zero;
+let prevPrize = zero;
+let maxPrize = hundred;
+let attempts = three;
+let numberRange = nine;
+let guessed = false;
 
-if(wannaPlay == false) {
+
+
+playGame = confirm('Do you want to play a game?');
+
+if(playGame === false) {
     alert('You did not become a billionaire, but can.');
 } else {
-// STEP 2 Start a game
-    number = Math.floor(Math.random() * 9);
-    let attempts = 3;
-    prize = $0;
-    let maxPrize = $100;
-    var guessed = false;
+    while(playGame !== false) {
+        randomNumber = Math.floor(Math.random() * numberRange);
 
-    while (attempts > 0 && guessed == false) {
-        userGuess = parseInt(prompt('Choose a rouletter pocket number from 0 to 8 \nattemptss left: ' + attempts + '\nTotal prize: ' + prize + '\nPossible prize on current attempts: ' + maxPrize, ''));
+        while (attempts > zero && guessed === false) {
+            userGuess = parseInt(prompt(`Choose a rouletter pocket number from 0 to ${numberRange - one}\n
+            Attempts left: ${attempts}\n 
+            Total prize: $${prevPrize}\n
+            Possible prize on current attempt: $${maxPrize}`));
 
-        if(userGuess === null) {
-            break;
-        } else if(userGuess === number) {
-            guessed = true;
-
-            if(attempts === 3) {
-                prize = maxPrize;
-            } else if(attempts === 2) {
-                prize = maxPrize / 2;
-            } else {
-                prize = maxPrize / 4;
+            if(userGuess === randomNumber) {
+                guessed = true;
+                currentPrize = maxPrize;
+                playGame = confirm(`Congratulation, you won!\n
+                Your prize is: $${currentPrize}\n
+                Do you want to continue?`);
             }
+            maxPrize / two;
+            attempts--;
         }
-        attempts --;
+
+        if(!guessed || playGame === false){
+            alert(`Thank you for your participation. Your prize is $${currentPrize + prevPrize}`);
+            playGame = confirm('Do you want to play again?');
+        }
+        if (playGame) {
+            if(guessed) {
+                guessed = false;
+                maxPrize = maxPrize * two;
+                numberRange = numberRange + four;
+            }
+            prevPrize = currentPrize + prevPrize;
+            currentPrize = zero;
+            attempts = three;
+        } 
     }
-    if(guessed) {
-        var proceed = confirm('Congratulation, you won! \nYour prize is: ' + prize + '. Do you want to continue?');
-        if (proceed) {
-            continue;
-        } else {
-            break;
-        }
-    } 
-    
-        alert('Thank you for your participation. Your prize is' + prize);
-        wannaPlay = confirm('Do you want to play a game?');
-    
 }
