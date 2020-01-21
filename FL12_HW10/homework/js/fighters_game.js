@@ -83,23 +83,3 @@ const fighter1 = new Fighter({name: 'Maximus', damage: 20, hp: 100, strength: 20
 const fighter2 = new Fighter({name: 'Commodus', damage: 25, hp: 90, strength: 25, agility: 20}); 
 
 battle(fighter1, fighter2);
-
-// let name = fighter1.getName();
-// console.log(name); // Maximus
-
-// let damage = fighter1.getDamage();
-// console.log(damage); // 20
-
-// let strength = fighter1.getStrength();
-// console.log(strength); // 30
-
-// let agility = fighter1.getAgility();
-// console.log(agility); // 25
-
-// let health = fighter1.getHealth();
-// console.log(health); // 100
-
-// fighter1.attack(fighter2);
-// // Maximus makes 20 damage to Commodus
-
-// fighter1.logCombatHistory(); // Name: Maximus, Wins: 0, Losses: 0
