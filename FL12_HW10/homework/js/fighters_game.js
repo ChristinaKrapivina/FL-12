@@ -56,25 +56,29 @@ class Fighter {
         this.loss += 1;
     }
 }
+function canFight(fighter) {
+    if (fighter.currentHealth === 0) {
+        console.log(` ${fighter.getName()} is dead and can't fight`);
+        return false;
+    } 
+    return true;
+}
+function updateBattleCount(winner, loser) {
+    console.log(`${winner.getName()} has won!`);
+    winner.addWin();
+    loser.addLoss();
+}
 
 function battle (fighter1, fighter2) {
-    if (fighter1.currentHealth === 0) {
-        console.log(` ${fighter1.getName()} is dead and can't fight`);
-    } else if (fighter2.currentHealth === 0) {
-        console.log(` ${fighter2.getName()} is dead and can't fight`);
-    } else {
+    if (canFight(fighter1) && canFight(fighter2)) {
         while(fighter1.currentHealth > 0 && fighter2.currentHealth > 0) {
             fighter1.attack(fighter2);
             fighter2.attack(fighter1);
         }
-        if (fighter1.currentHealth <= 0) {
-            console.log(`${fighter2.getName()} has won!`);
-            fighter2.addWin();
-            fighter1.addLoss();
+        if (fighter1.currentHealth === 0) {
+            updateBattleCount(fighter2, fighter1);
         } else {
-            console.log(`${fighter1.getName()} has won!`);
-            fighter1.addWin();
-            fighter2.addLoss();
+            updateBattleCount(fighter1, fighter2);
         }
     }
 }
