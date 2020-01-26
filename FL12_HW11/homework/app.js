@@ -36,70 +36,74 @@ const structure = [
 ];
 
 const rootNode = document.getElementById('root');
-// Todo: your code goes here
 
-let ulMain = document.createElement('ul');
+let mainListContainer = document.createElement('ul');
+createDomTree(structure, mainListContainer);
+rootNode.appendChild(mainListContainer);
+
+addClickListener();
 
 function createDomTree(fileStructure, containerNode) {
   for(let i = 0; i < fileStructure.length; i++) {
-    let li = document.createElement('li'),
+    let listItem = document.createElement('li'),
         div = document.createElement('div'),
-        icon = document.createElement('i'),
-        iconTextFolder = document.createTextNode('folder'),
-        iconTextFile = document.createTextNode('insert_drive_file');
+        iconNode = createIcon(fileStructure[i]);
   
-      icon.classList.add('material-icons');
-  
-      if (fileStructure[i].folder) {
-        icon.classList.add('orange');
-        icon.appendChild(iconTextFolder);
-        div.classList.add('parentContainer');
-      } else {
-        icon.classList.add('grey');
-        icon.appendChild(iconTextFile);
-      }
-  
-      div.appendChild(icon);
+      div.appendChild(iconNode);
       div.appendChild(document.createTextNode(fileStructure[i].title));
   
       div.classList.add('container');
       
-      li.appendChild(div);
+      listItem.appendChild(div);
+  
+      if (fileStructure[i].folder) {
+        div.classList.add('parentContainer');
+        let nestedListContainer = createNestedList(fileStructure[i]);
 
-      if(fileStructure[i].folder) {
-        let ul = document.createElement('ul');
-        ul.classList.add('nested');
-        li.appendChild(ul);
-
-        if(fileStructure[i].children) {
-          createDomTree(fileStructure[i].children, ul);
-        } else {
-          createEmptyNode(ul);
-        }
-      }
+        listItem.appendChild(nestedListContainer);
+      } 
  
-      containerNode.appendChild(li);
+      containerNode.appendChild(listItem);
   }
 }
-function createEmptyNode(containerNode) {
-    let li = document.createElement('li'),
+function createIcon(fileStructureElement){
+  let icon = document.createElement('i');
+  icon.classList.add('material-icons');
+
+  if (fileStructureElement.folder) {
+    icon.classList.add('orange');
+    icon.appendChild(document.createTextNode('folder'));
+  } else {
+    icon.classList.add('grey');
+    icon.appendChild(document.createTextNode('insert_drive_file'));
+  }
+  return icon;
+}
+function createNestedList(fileStructureElement) {
+  let ul = document.createElement('ul');
+  ul.classList.add('nested');
+  
+  if(fileStructureElement.children) {
+    createDomTree(fileStructureElement.children, ul);
+  } else {
+    createEmptyList(ul);
+  }
+  return ul;
+}
+function createEmptyList(containerNode) {
+    let listItem = document.createElement('li'),
         div = document.createElement('div');
 
       div.appendChild(document.createTextNode('Folder is empty'));
   
       div.classList.add('container');
       
-      li.appendChild(div);
-      li.classList.add('empty');
+      listItem.appendChild(div);
+      listItem.classList.add('empty');
 
-      containerNode.appendChild(li);      
+      containerNode.appendChild(listItem);      
 }
-
-createDomTree(structure, ulMain);
-
-rootNode.appendChild(ulMain);
-
-function openClose(nodeElement) {
+function toggleFolderState(nodeElement) {
   nodeElement.nextSibling.classList.toggle('active');
   let iconNode = nodeElement.querySelector('.material-icons');
   if (iconNode.textContent === 'folder') {
@@ -108,12 +112,9 @@ function openClose(nodeElement) {
     iconNode.textContent = 'folder';
   }
 }
-
-let clickedElement = document.querySelectorAll('.parentContainer');
-
-for (let i = 0; i < clickedElement.length; i++) {
-  
-  clickedElement[i].addEventListener('click', () => openClose(clickedElement[i]));
+function addClickListener() {
+  let clickableElement = document.querySelectorAll('.parentContainer');
+  for (let i = 0; i < clickableElement.length; i++) {
+    clickableElement[i].addEventListener('click', () => toggleFolderState(clickableElement[i]));
+  }
 }
-
-
