@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Homework 12 - Simple TODO List</title>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'> 
+  <link rel="stylesheet" href="./assets/styles.css">
+  <script src="https://kit.fontawesome.com/c6d4ccf0b2.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="root">
+    <header class="header">
+      <a href="#" class="header_logo">My<span>Terms</span></a> 
+      <button id="create" class="button">Create a New Collection</button>
+    </header>
+    <main>
+      <div id="main" class="article">
+        <article class="article-wrap article-default">
+          <div class="article_text-wrap">
+            <div class="article_text">
+              <h2>You have no collections yet</h2>
+              <p>Use the button above to create your first collection!</p>
+            </div>
+          </div>
+        </article>
+        <article id="collection" class="article-wrap ">
+          <div class="article_text-wrap">
+            <div class="article_text">
+              <h2>My first collection</h2>
+              <p>13 terms</p>
+            </div>
+            <div class="button-wrap">
+              <button class="article_button edit">Edit</button>
+              <button class="article_button remove">Remove</button>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div id="add">
+        <div class="form-wrap">
+          <div>
+              <h2>Add a New Collection</h2>
+              <form method='post' id="cardsForm">
+                <div class="form-group">
+                  <input type="text" id="collection_name" name="collection_name" placeholder="Enter Your Collection Name" required class="form-control">
+                </div>
+                <div class="terms-wrap">
+                  <div class="form-group">
+                    <textarea name="term" placeholder="Enter Term" cols="35" rows="1" class="form-control"></textarea>
+                  </div>
+                  <div class="form-group">
+                    <textarea name="definition" placeholder="Enter Definition" cols="35" rows="1" class="form-control"></textarea>
+                  </div>
+                  <i class="fas fa-trash "></i>
+                </div>
+                <div class="form-group add_terms">
+                  <button id="addMore" class="article_button edit">Add more terms</button>
+                </div>
+                <div class="button-wrap">
+                  <button id="save" type="submit" class="button edit">Save</button>
+                  <button id="cancel" type="button" class="button remove">Cancel</button>
+                </div>
+              </form>
+          </div>
+          
+        </div>
+
+      </div>
+      <div id="modify">
+        <div class="form-wrap">
+          <div>
+              <h2>Modify Your Collection</h2>
+              <form method="post">
+                <div class="form-group">
+                  <input type="text" name="collection_name" placeholder="Enter Your Collection Name" required class="form-control">
+                </div>
+                <div class="terms-wrap">
+                  <div class="form-group">
+                    <textarea name="term" id="term" placeholder="Enter Term" cols="35" rows="1" class="form-control"></textarea>
+                  </div>
+                  <div class="form-group">
+                    <textarea name="definition" id="definition" placeholder="Enter Definition" cols="35" rows="1" class="form-control"></textarea>
+                  </div>
+                  <i class="fas fa-trash "></i>
+                </div>
+                <div class="form-group add_terms">
+                  <button class="article_button edit">Add more terms</button>
+                </div>
+                <div class="button-wrap">
+                  <button type="submit" class="button edit">Save</button>
+                  <button type="submit" class="button remove">Cancel</button>
+                </div>
+              </form>
+          </div>
+          
+        </div>
+
+      </div>
+    </main>
+    <footer class="footer">
+        <div>
+          <p>Copyright 2018, Epam systems</p>
+          <p>Lorem ipsum dolor sit amet consectetur 
+          adipisicing elit. Facere reiciendis.</p>
+        </div>
+        <div>
+          <p>Design and coding<br>
+            by CK</p>
+        </div>
+    </footer>
+
+  </div>
+
+  <script src="./src/app.js"></script>
+</body>
+</html>
